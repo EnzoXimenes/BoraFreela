@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/da6973a6-439b-4eff-84be-a6cbfc781175" />
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/24b25f24-0c57-46cf-8e21-7ba63fa7eef9" />
 # 🚀 BoraFreela
 
 > **Conectando talentos a oportunidades.**
