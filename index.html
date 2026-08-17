@@ -8,12 +8,18 @@
     <style>
         body {
 
+        font-family: 'Inter', sans-serif;
+        background: #FFFFFF;
+        background-image: url(bannerprincipal.png);
+
         }
 
         header{
             display: flex;
-            align-items: center;
-            gap: 10%;
+            align-items: center;/* Mantem logo e barra na mesma altura */
+            justify-content: flex-start; /* Alinha tudo comecando da esquerda */
+            gap: 45px;/* Define a distancia exata entre o logo e os links (muda o nemero se quiser mais perto/longe) */
+            padding: 0 5%;     
         }
 
         .logo-container {
@@ -27,51 +33,69 @@
             height: auto;
         }
 
-        ul.explorar {
-            position: absolute;
-        }
+       .navegate {
+            display: inline-flex; /*Alinha os links */
+            padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
+            gap: 20px;/* Cria distancia entre os links */
+            background-color: rgb(41, 10, 128);
+            border-radius: 15px;/*Deixa a borda mais arredondada*/
 
-        ul.navegacao {
-            position: absolute;
-            display: flex;
-            gap: 50%;
         }
-        ul {
-            display: flex;
+        .navegate:hover{
+            background-color: #FF6B00;
+        }
+         .navegate a {
+            text-decoration: none;
+            color: rgb(241, 236, 236);
         }
         details {
             position: relative;
         }
+        .texto-principal{
+            font-size: 42px;
+            text-align: center;
+        }
+        .banner-principal{
+          
+            background-image: url("bannerprincipal.png");
+             
+        }        
+        .destaque-laranja{
+             color: #FF6B00;
+             font-weight: 700;
+
+        }
+        .destaque-azul{
+    color: #19429a;
+    font-weight: 700;
+}
     </style>
 
 </head>
 <body>
     <header>
-        <div class="logo-container">
+        <span class="logo-container">
             <img src="BoraFreela.png" alt="Logo do BoraFreela">
-        </div>
+            
+        </span>
         
         <nav>
-            <details>
-                <summary>Explorar</summary>
-                <ul class="explorar">
-                    <li><a href="#">Serviços freelancer</a></li>
-                    <li><a href="#">Freelancers</a></li>
-                </ul>
-            </details>
 
-            <ul class="navegacao">
-                <li><a href="#">Como funciona</a></li>
-                <li><a href="#">Seja um profissional</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Cadastro</a></li>
-            </ul>
+            <span class="navegate">
+                <a href="#" style="text-decoration: none;">Como funciona</a></li>
+                <a href="#" style="text-decoration: none;">Seja um profissional</a></li>
+                <a href="#" style="text-decoration: none;">Login</a></li>
+                <a href="#" style="text-decoration: none;">Cadastro</a></li>
+            </span>
+            
         </nav>
     </header>
 
     <main>
         <section>
-            
+            <span class="banner-principal">
+            <h1 class="texto-principal">Conectando <span class="destaque-laranja">talentos</span> a <span class="destaque-azul">oportunidades</span>.</h1>
+            </span>
         </section>
     </main>
 
