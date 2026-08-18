@@ -6,20 +6,26 @@
     <link rel="icon" type="image/png" href="favcon.png">
     <title>BoraFreela</title>
     <link rel="stylesheet" href="">
-<<<<<<< HEAD
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
         body {
 
-=======
-    
-    <style>
-        body {
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
         font-family: 'Inter', sans-serif;
-        background: #FFFFFF;
-        background-image: url(bannerprincipal.png);
+        background: white;
+        display: auto;
+        margin: 0;
+
 
         }
+        
 
         header{
             display: flex;
@@ -28,13 +34,31 @@
             gap: 45px;/* Define a distancia exata entre o logo e os links (muda o nemero se quiser mais perto/longe) */
             padding: 0 5%;  /*No lugaar do 0 define a distancia da parte de cima do site, e a % define a posicaoo comecando da esquerda*/   
         }
-
+        main{
+           
+            background-image: url(bannerprincipal.png);
+            background-size: 1500px;/*Muda a o banner principal, quanto maior o numero, maior ficar a imagem.
+            so consegui achar essa solução para isso*/
+            
+        }
+        .principal{
+             display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        footer{
+            background-color: #19429a;
+            display: flex;
+            padding: 0% 5px;
+            height: 100px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .nome-rodape{
+            color: white;
+            letter-spacing: 2px;
+        }
         .logo-container {
-<<<<<<< HEAD
             width: 200px;
-=======
-            width: 120px;
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
             height: 120px;
             align-items: center;
             display: flex;
@@ -43,8 +67,11 @@
             width: 100%;
             height: auto;
         }
-<<<<<<< HEAD
-
+        mark{
+             background-color: chocolate;
+             color: white;
+             border-radius: 3px 10px 2px 10px;
+        }
        .navegate {
             display: inline-flex; /*Alinha os links */
             padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
@@ -60,56 +87,244 @@
             text-decoration: none;
             color: rgb(241, 236, 236);
             transition: 0.5s;/*Tempo para  letra da nvbar trocar a cor*/
-=======
-       .navegate {
-            list-style: none;
-            display: inline-flex; /*Alinha os links */
-            padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
-            background-color: rgb(41, 10, 128);
-            border-radius: 20px;/*Deixa a borda mais arredondada*/
-        }
-        summary {
-            list-style: none;
-        }
-        .icon {
-            width: 30%;
-            height: auto;
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
         }
         .texto-principal{
             font-size: 42px;
             text-align: center;
+            letter-spacing: 0.5px;
+            margin-top: 100px;
         }
-        .banner-principal{
-<<<<<<< HEAD
-          
-            background-image: url("bannerprincipal.png");
-             
-=======
-            background-image: url("bannerprincipal.png");
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
-        }        
+        .sub-titulo{
+            font-size: 15px;
+            text-align: center;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+        .secao{
+            background-color: white;
+            
+
+        }
+        .encontre{
+            justify-content: center;
+            display: flex;
+            background-color: white;
+            width: auto;
+            height:35px;
+            text-align: center;
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            margin-top: 20px;
+
+
+        }
+        .talento{
+            justify-content: center;
+            display: flex;
+            color: #19429a;
+            width: auto;
+            height:35px;
+            text-align: center;
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            margin-left: 9px;
+            
+
+        }
+        .freelancer{
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            text-align: center;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .lista-trabalho{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            margin-right: 50px;
+            
+        }
+       .lista-trabalho-baixa{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            margin-bottom: 80px;
+            margin-right: 50px;
+        }
+        .marketing{
+            background-color: #659793;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .copywriting{
+            background-color: #690808;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .uiux{
+            background-color: #21c23c;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .lista-trabalho-baixa li:hover{
+            cursor: pointer;
+        }
+        .desenvolvedor{
+            background-color: #2154c2;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .desenhar{
+            background-color: #d3a013;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 250px;
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+        }
+        .video{
+            background-color: #d116a9;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+       
+        .lista-trabalho li:hover{
+            cursor: pointer;
+        }
+        ul{
+            list-style: none;
+        }
+        .ver-categorias{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+        .ver-categorias button{
+             border:solid;
+             border-radius: 3px;
+             margin-bottom: 50px;
+             background-color: transparent;
+             width: 155px;
+             color:#19429a;
+             font-size: 13px;
+             margin:auto;
+             margin-bottom: 100px;
+             border-color: #446360;
+             white-space: nowrap;
+             padding: 12px 28px;
+             font-family: 'Poppins', sans-serif;
+            }
+        .ver-categorias button:hover{
+            cursor: pointer;
+            border-color: #73aca6;
+        }
+        .botoes{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        .quero-trabalhar button{
+            border: none;
+            background-color: #19429a;
+            color: white;
+            border-radius: 5px;
+            width: 220px;
+            padding: 12px;
+            height: 90px;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+
+        }
+        .publicar-projeto button{
+            border: none;
+            background-color: #19429a;
+            color: white;
+            width: 220px;
+            height: 90px;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+
+
+        }
+        .botoes button:hover{
+            background-color: #2154c2;
+            transition: 0.5s;
+            cursor: pointer;
+            
+        }       
         .destaque-laranja{
              color: #FF6B00;
              font-weight: 700;
 
         }
         .destaque-azul{
-<<<<<<< HEAD
     color: #19429a;
     font-weight: 700;
 }
-=======
-            color: #19429a;
-            font-weight: 700;
-        }
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
+
     </style>
 
 </head>
 <body>
     <header>
-<<<<<<< HEAD
         <span class="logo-container">
             <img src="BoraFreela2.png" alt="Logo do BoraFreela">
             
@@ -124,44 +339,48 @@
                 <a href="#" style="text-decoration: none;">Cadastro</a></li>
             </span>
             
-=======
-        <div class="logo-container">
-            <img src="assets/logoborafreela2.png" alt="BoraFreela">
-        </div>
-        
-        <nav>
-            <ul class="navegate">
-                <li>
-                    <details>
-                        <summary><img class="icon" src="assets/user.png"></summary>
-                            <a href="profile.html"></a>
-                            <a href="profile.html"></a>
-                            <a href="profile.html"></a>
-                    </details>
-                </li>
-
-                <li>
-                    <a class="como-funciona" href="comofunciona.html">
-                        
-                    <a class="explorar" href="explorar.html">
-                        <img class="icon" src="assets/search.png">
-                    </a>
-                </li>
-            </ul>
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
         </nav>
     </header>
 
     <main>
+        <div class="principal">
         <section>
-            <span class="banner-principal">
-            <h1 class="texto-principal">Conectando <span class="destaque-laranja">talentos</span> a <span class="destaque-azul">oportunidades</span>.</h1>
-            </span>
+            <h1 class="texto-principal"><u>Conectando</u> <span class="destaque-laranja">talentos</span> a <span class="destaque-azul">oportunidades</span>.</h1>
+            <p class="sub-titulo">Seu <span class="destaque-laranja">talento</span> pode ser o próximo grande <b>projeto</b>.</p>
+            <div class="botoes">
+                <span class="publicar-projeto">
+                    <button>Publicar projeto</button>
+                </span>
+                <p class="quero-trabalhar">
+                    <button>Quero trabalhar</button>
+                </p>
+            </div>
         </section>
+        </div>
     </main>
+    <div class="freelancer">
+        <p>Você é um <span class="destaque-azul">freelancer</span>? Venha para a melhor <mark>plataforma</mark>!</p>
+    </div>
+        <p class="encontre">
+            Encontre um  <b class="talento">talento</b>
+        </p>
+        <ul class="lista-trabalho">
+            <li class="desenvolvedor"><b>Programação</b></li>
+            <li class="desenhar"><b>Desenhar seu logotiopo</b></li>
+            <li class="video"><b>Criar o seu vídeo</b></li>
+        </ul>
+        <ul class="lista-trabalho-baixa">
+            <li class="marketing"><b>Marketing</b></li>
+            <li class="copywriting"><b>Copywriting</b></li>
+            <li class="uiux"><b>UI/UX</b></li>
+        </ul>
+        <div class="ver-categorias">
+            <button class="ver-categorias">Ver todas categorias</button>
+        </div>
+    
 
     <footer>
-
+        <p class="nome-rodape">Site desenvolvido por: Claudinei Conceição, Gabriela Siqueira e Enzo Ximenes</p>
     </footer>
 
 </body>
