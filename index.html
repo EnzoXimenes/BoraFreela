@@ -52,7 +52,7 @@
         details {
             position: relative; /*Posicionado em relação ao elemento pai*/
         }        
-        .profile-btn {
+        .user-btn {
             width: 100px;
             list-style: none; /*Estilo do botão da gaveta*/
             flex-direction: column;
@@ -63,13 +63,13 @@
             color: var(--branco);
             display: flex;
             align-items: center;
-            gap: 8Spx;
+            gap: 8px;
         }
         .icon {
             width: 30px; /*Largura*/
             height: auto; /*Altura é redimensionada automaticamente em relação a altura*/
         }
-        .profile-drop {
+        .user-drop {
             background-color: var(--azul-escuro);
             position: absolute; /*Posição em relação ao elemento pai*/
             z-index: 99;
@@ -88,7 +88,6 @@
         .innerIcon {
             width: 25px;
             height: auto;
-            
         }
         .texto-principal{
             font-size: 42px; /*Tamanho da fonte*/
@@ -97,7 +96,6 @@
         .destaque-laranja{
              color: var(--laranja);
              font-weight: 700;
-
         }
         .destaque-azul{
             color: #19429a;
@@ -107,7 +105,7 @@
 
 </head>
 <body>
-    <header>
+    <header> <!--BOTÃO DA GAVETA USUARIO-->
         <div class="logo-container">
             <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
         </div>
@@ -115,16 +113,16 @@
         <nav>
             <ul class="navegate">
                 <details>
-                    <summary class="profile-btn">
+                    <summary class="user-btn">
                         <img class="icon" src="assets/images/user.png">
                     </summary>
                         
-                    <div class="profile-drop">
+                    <div class="user-drop">
                         <a class="drop-links" href="profile.html">Perfil</a>
                         <a class="drop-links" href="login.html">login</a>
                         <a class="drop-links" href="cadastro.html">Sign up</a>
                         <a class="logout-btn" href="">
-                            <span>Desconectar</span>
+                            <span>Sair</span>
                             <img class="innerIcon" src="assets/images/logout.png">
                         </a>
                     </div>    
