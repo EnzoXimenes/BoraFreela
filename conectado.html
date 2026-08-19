@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favcon.png">
+    <title>BoraFreela</title>
+    <link rel="stylesheet" href="">
+    
+    <style>
+        :root {
+            --azul-escuro: #290a80;
+            --laranja: #FF6B00;
+            --branco: #FFFFFF;
+        }
+
+        body {
+        font-family: 'Inter', sans-serif;
+        background: #FFFFFF;
+        background-image: url(assets/images/bannerprincipal.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        }
+
+        header{
+            display: flex;
+            align-items: center;/* Mantem logo e barra na mesma altura */
+            justify-content: flex-start; /* Alinha tudo comecando da esquerda */
+            gap: 20px;/* Define a distancia exata entre o logo e os links (muda o nemero se quiser mais perto/longe) */
+            padding: 0 5%;  /*No lugaar do 0 define a distancia da parte de cima do site, e a % define a posicaoo comecando da esquerda*/   
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            align-items: center; /*Alinhar itens*/
+            display: flex;
+        }
+        .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+       .navegate {
+            list-style: none;
+            display: inline-flex; /*Alinha os links */
+            padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
+            background-color: #290a80;
+            border-radius: 20px;/*Deixa a borda mais arredondada*/
+        }
+        details {
+            position: relative; /*Posicionado em relação ao elemento pai*/
+        }        
+        .user-btn {
+            width: 100px;
+            list-style: none; /*Estilo do botão da gaveta*/
+            flex-direction: column;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .logout-btn {
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon {
+            width: 30px; /*Largura*/
+            height: auto; /*Altura é redimensionada automaticamente em relação a altura*/
+        }
+        .user-drop {
+            background-color: var(--azul-escuro);
+            position: absolute; /*Posição em relação ao elemento pai*/
+            z-index: 99;
+            padding: 8px;
+            display: flex; /*Lista*/
+            flex-direction: column; /*Estilo da lista*/
+            border-radius: 10px; /*Suaviza a borda*/
+            gap: 10px;
+            }
+        .drop-links {
+            color: var(--branco);
+        }
+        a {
+            text-decoration: none;
+        }
+        .innerIcon {
+            width: 25px;
+            height: auto;
+        }
+        .texto-principal{
+            font-size: 42px; /*Tamanho da fonte*/
+            text-align: center; /*alinhamento*/
+        }     
+        .destaque-laranja{
+             color: var(--laranja);
+             font-weight: 700;
+        }
+        .destaque-azul{
+            color: #19429a;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+<body>
+    <header> <!--BOTÃO DA GAVETA USUARIO-->
+        <div class="logo-container">
+            <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
+        </div>
+        
+        <nav>
+            <ul class="navegate">
+                <details>
+                    <summary class="user-btn">
+                        <img class="icon" src="assets/images/user.png">
+                    </summary>
+                        
+                    <div class="user-drop">
+                        <a class="drop-links" href="profile.html">Perfil</a>
+                        <a class="drop-links" href="login.html">login</a>
+                        <a class="drop-links" href="cadastro.html">Sign up</a>
+                        <a class="logout-btn" href="">
+                            <span>Entrar</span>
+                            <img class="innerIcon" src="assets/images/logout.png">
+                        </a>
+                    </div>    
+                </details>
+
+                <li>
+                    <a class="como-funciona" href="comofunciona.html">
+                    <a class="explorar" href="explorar.html">
+                        <img class="icon" src="assets/images/search.png">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="banner-principal">
+            <h1 class="texto-principal">Conectando <span class="destaque-laranja">talentos</span> a <span class="destaque-azul">oportunidades</span>.</h1>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>
