@@ -6,157 +6,145 @@
     <link rel="icon" type="image/png" href="favcon.png">
     <title>BoraFreela</title>
     <link rel="stylesheet" href="">
-<<<<<<< HEAD
-    <style>
-        body {
-
-=======
     
     <style>
+        :root {
+            --azul-escuro: #290a80;
+            --laranja: #FF6B00;
+            --branco: #FFFFFF;
+        }
+
         body {
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
         font-family: 'Inter', sans-serif;
         background: #FFFFFF;
-        background-image: url(bannerprincipal.png);
-
+        background-image: url(assets/images/bannerprincipal.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
         }
 
         header{
             display: flex;
             align-items: center;/* Mantem logo e barra na mesma altura */
             justify-content: flex-start; /* Alinha tudo comecando da esquerda */
-            gap: 45px;/* Define a distancia exata entre o logo e os links (muda o nemero se quiser mais perto/longe) */
+            gap: 20px;/* Define a distancia exata entre o logo e os links (muda o nemero se quiser mais perto/longe) */
             padding: 0 5%;  /*No lugaar do 0 define a distancia da parte de cima do site, e a % define a posicaoo comecando da esquerda*/   
         }
 
         .logo-container {
-<<<<<<< HEAD
-            width: 200px;
-=======
             width: 120px;
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
             height: 120px;
-            align-items: center;
+            align-items: center; /*Alinhar itens*/
             display: flex;
         }
         .logo-container img {
             width: 100%;
             height: auto;
         }
-<<<<<<< HEAD
-
-       .navegate {
-            display: inline-flex; /*Alinha os links */
-            padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
-            gap: 20px;/* Cria distancia entre os links */
-            background-color: rgb(41, 10, 128);
-            border-radius: 15px;/*Deixa a borda mais arredondada*/
-
-        }
-        .navegate a:hover{
-            color: #FF6B00;
-        }
-         .navegate a {
-            text-decoration: none;
-            color: rgb(241, 236, 236);
-            transition: 0.5s;/*Tempo para  letra da nvbar trocar a cor*/
-=======
        .navegate {
             list-style: none;
             display: inline-flex; /*Alinha os links */
             padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
-            background-color: rgb(41, 10, 128);
+            background-color: #290a80;
             border-radius: 20px;/*Deixa a borda mais arredondada*/
         }
-        summary {
-            list-style: none;
+        details {
+            position: relative; /*Posicionado em relação ao elemento pai*/
+        }        
+        .profile-btn {
+            width: 100px;
+            list-style: none; /*Estilo do botão da gaveta*/
+            flex-direction: column;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .logout-btn {
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            gap: 8Spx;
         }
         .icon {
-            width: 30%;
+            width: 30px; /*Largura*/
+            height: auto; /*Altura é redimensionada automaticamente em relação a altura*/
+        }
+        .profile-drop {
+            background-color: var(--azul-escuro);
+            position: absolute; /*Posição em relação ao elemento pai*/
+            z-index: 99;
+            padding: 8px;
+            display: flex; /*Lista*/
+            flex-direction: column; /*Estilo da lista*/
+            border-radius: 10px; /*Suaviza a borda*/
+            gap: 10px;
+            }
+        .drop-links {
+            color: var(--branco);
+        }
+        a {
+            text-decoration: none;
+        }
+        .innerIcon {
+            width: 25px;
             height: auto;
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
+            
         }
         .texto-principal{
-            font-size: 42px;
-            text-align: center;
-        }
-        .banner-principal{
-<<<<<<< HEAD
-          
-            background-image: url("bannerprincipal.png");
-             
-=======
-            background-image: url("bannerprincipal.png");
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
-        }        
+            font-size: 42px; /*Tamanho da fonte*/
+            text-align: center; /*alinhamento*/
+        }     
         .destaque-laranja{
-             color: #FF6B00;
+             color: var(--laranja);
              font-weight: 700;
 
         }
         .destaque-azul{
-<<<<<<< HEAD
-    color: #19429a;
-    font-weight: 700;
-}
-=======
             color: #19429a;
             font-weight: 700;
         }
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
     </style>
 
 </head>
 <body>
     <header>
-<<<<<<< HEAD
-        <span class="logo-container">
-            <img src="BoraFreela2.png" alt="Logo do BoraFreela">
-            
-        </span>
-        
-        <nav>
-
-            <span class="navegate">
-                <a href="#" style="text-decoration: none;">Como funciona</a></li>
-                <a href="#" style="text-decoration: none;">Seja um profissional</a></li>
-                <a href="#" style="text-decoration: none;">Login</a></li>
-                <a href="#" style="text-decoration: none;">Cadastro</a></li>
-            </span>
-            
-=======
         <div class="logo-container">
-            <img src="assets/logoborafreela2.png" alt="BoraFreela">
+            <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
         </div>
         
         <nav>
             <ul class="navegate">
-                <li>
-                    <details>
-                        <summary><img class="icon" src="assets/user.png"></summary>
-                            <a href="profile.html"></a>
-                            <a href="profile.html"></a>
-                            <a href="profile.html"></a>
-                    </details>
-                </li>
+                <details>
+                    <summary class="profile-btn">
+                        <img class="icon" src="assets/images/user.png">
+                    </summary>
+                        
+                    <div class="profile-drop">
+                        <a class="drop-links" href="profile.html">Perfil</a>
+                        <a class="drop-links" href="login.html">login</a>
+                        <a class="drop-links" href="cadastro.html">Sign up</a>
+                        <a class="logout-btn" href="">
+                            <span>Desconectar</span>
+                            <img class="innerIcon" src="assets/images/logout.png">
+                        </a>
+                    </div>    
+                </details>
 
                 <li>
                     <a class="como-funciona" href="comofunciona.html">
-                        
                     <a class="explorar" href="explorar.html">
-                        <img class="icon" src="assets/search.png">
+                        <img class="icon" src="assets/images/search.png">
                     </a>
                 </li>
             </ul>
->>>>>>> 4a5b899 (Criação de páginas novas e alteração no código da página principal)
         </nav>
     </header>
 
     <main>
         <section>
-            <span class="banner-principal">
+            <div class="banner-principal">
             <h1 class="texto-principal">Conectando <span class="destaque-laranja">talentos</span> a <span class="destaque-azul">oportunidades</span>.</h1>
-            </span>
+            </div>
         </section>
     </main>
 
