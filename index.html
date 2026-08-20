@@ -54,8 +54,10 @@
         }        
         .user-btn {
             width: 100px;
+            display: flex;
+            align-items: center;
             list-style: none; /*Estilo do botão da gaveta*/
-            flex-direction: column;
+            flex-direction: row;
             color: #FFFFFF;
             cursor: pointer;
         }
@@ -67,7 +69,7 @@
         }
         .icon {
             width: 30px; /*Largura*/
-            height: auto; /*Altura é redimensionada automaticamente em relação a altura*/
+            height: auto; /*Altura é redimensionada automaticamente em relação a largura*/
         }
         .user-drop {
             background-color: var(--azul-escuro);
@@ -115,6 +117,7 @@
                 <details>
                     <summary class="user-btn">
                         <img class="icon" src="assets/images/user.png">
+                        <span>Usuário</span>
                     </summary>
                         
                     <div class="user-drop">
