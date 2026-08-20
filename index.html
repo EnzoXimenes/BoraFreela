@@ -63,12 +63,15 @@
         }
         .info-btn-desktop {
             width: 100px; /*largura do elemento*/
-            display: flex; /*elemento flexivel*/
+            display: inline; /*elemento flexivel*/
             align-items: center; /*alinha os elementos filho*/
             list-style: none; /*Exclui a linha do texto*/
             flex-direction: row; /*Muda a direção do conteudo do elemento*/
             color: #FFFFFF;
             cursor: pointer; /*Muda o icone do cursor*/
+        }
+        .info-txt {
+
         }
         .login-btn {
             color: var(--branco);
@@ -168,8 +171,8 @@
 
                 <li>    <!--LINKS DA NAV BAR-->
                     <a class="info-btn-desktop" href="comofunciona.html">
-                        <span>Como funciona</span>
                         <img class="icon" src="assets/images/info.png">
+                        <span class="info-txt">Como funciona</span>
 
                     <a class="explorar" href="explorar.html">
                         <img class="icon" src="assets/images/search.png">
