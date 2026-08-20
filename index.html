@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favcon.png">
     <title>BoraFreela</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Style.css">
     
     <style>
         :root {
@@ -13,9 +13,12 @@
             --laranja: #FF6B00;
             --branco: #FFFFFF;
         }
-
+        @font-face {
+            font-family: Comfortaa-Light;
+            src: url(assets/fonts/Comfortaa/static/Comfortaa-Light.ttf);
+        }
         body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Comfortaa-light', sans-serif;
         background: #FFFFFF;
         background-image: url(assets/images/bannerprincipal.png);
         background-size: cover;
@@ -93,7 +96,7 @@
         }
         .texto-principal{
             font-size: 42px; /*Tamanho da fonte*/
-            text-align: center; /*alinhamento*/
+            text-align: start; /*alinhamento*/
         }     
         .destaque-laranja{
              color: var(--laranja);
