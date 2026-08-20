@@ -33,7 +33,7 @@
 
         .logo-container {
             width: 120px;
-            height: autopx;
+            height: auto;
             align-items: center; /*Alinhar itens*/
             display: flex;
         }
@@ -49,6 +49,9 @@
             background-color: #290a80;
             border-radius: 20px;/*Deixa a borda mais arredondada*/
         }
+        li {
+            display: inline-flex;
+        }
         details {
             position: relative; /*Posicionado em relação ao elemento pai*/
         }        
@@ -62,16 +65,17 @@
             cursor: pointer;
         }
         .info-btn-desktop {
-            width: 100px; /*largura do elemento*/
-            display: inline; /*elemento flexivel*/
+            width: 160px;
+            display: flex; /*elemento flexivel*/
             align-items: center; /*alinha os elementos filho*/
             list-style: none; /*Exclui a linha do texto*/
             flex-direction: row; /*Muda a direção do conteudo do elemento*/
             color: #FFFFFF;
             cursor: pointer; /*Muda o icone do cursor*/
+            gap: 8px;
         }
-        .info-txt {
-
+        .info-btn-mobile {
+            display: none;
         }
         .login-btn {
             color: var(--branco);
@@ -130,9 +134,14 @@
             .user-drop {
                 top: auto;
                 bottom: 100%;
+                flex-direction: column-reverse;
             }
-            .info-btn {
-                display: inline;
+            .info-btn-mobile {
+                width: 25px;
+                display: flex;
+            }
+            .info-btn-desktop {
+                display: none;
             }
         }
     </style>
@@ -144,9 +153,9 @@
             <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
         </div>
 
-        <a class="info-btn-mobile"></a>
+        <a class="info-btn-mobile" href="comofunciona.html">
             <img class="userIcon" src="assets/images/infoblack.png">
-            <a href="comofunciona.html"></a>
+        </a>
         
         <nav>
             <ul class="navegate">
