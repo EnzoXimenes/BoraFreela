@@ -12,6 +12,7 @@
             --azul-escuro: #290a80;
             --laranja: #FF6B00;
             --branco: #FFFFFF;
+            --background-azul: #3c2d4b;
         }
         body {
         font-family: 'Comfortaa-light', sans-serif;
@@ -118,6 +119,10 @@
             color: #19429a;
             font-weight: 700;
         }
+        .theme-btn {
+            color: #FFFFFF;
+            font-size: 30px;
+        }
         @media (max-width: 768px) {
             body {
                 background-image: none;
@@ -186,6 +191,11 @@
                     <a class="explorar" href="explorar.html">
                         <img class="icon" src="assets/images/search.png">
                     </a>
+
+                    <label for="theme-toggle" class="theme-btn">
+                        <span class="theme-icon">☀️</span>
+                        <span class="theme-icon">🌙</span>
+                    </label>
                 </li>
             </ul>
         </nav>
