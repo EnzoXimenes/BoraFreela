@@ -1,9 +1,5 @@
-<div align="center" style="background-color: #ffffff; line-height: 0;">
-  <!-- Logo -->
-  <img src="assets/images/logoborafreela1.png" alt="BoraFreela Logo" width="280" style="display: block;" />
-
-  <!-- Onda corrigida -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF5500&height=120&section=footer" width="100%" style="display: block;" />
+<div align="center">
+  <img src="assets/images/BoraFreela.png" alt="Logo">
 </div>
 
 # **`Borafreela`**
