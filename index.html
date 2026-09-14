@@ -12,7 +12,7 @@
             --azul-escuro: #290a80;
             --laranja: #FF6B00;
             --branco: #FFFFFF;
-            --background-azul: #3c2d4b;
+            --background-azul: #2d2d4b;
         }
         body {
         font-family: 'Comfortaa-light', sans-serif;
@@ -33,7 +33,7 @@
         }
 
         .logo-container {
-            width: 120px;
+            width: 150px;
             height: auto;
             align-items: center; /*Alinhar itens*/
             display: flex;
@@ -42,16 +42,28 @@
             width: 100%;
             height: auto;
         }
+        .banner-principal{
+            background-color: #f8f8fa;
+            position: absolute;
+            left: 3rem;
+            border-radius: 1rem;
+            color: var(--azul-escuro);
+            max-width: 50%;
+            padding: 1em;
+        }
        .navegate {
-            z-index: 99px; /*profundidade do elemento*/
-            list-style: none; /*tira qualquer decoração do texto*/
-            display: inline-flex; /*Alinha os links */
-            padding: 15px 30px;/* O primeiro numero aumenta em cima/baixo. O segundo nas laterais */
+            list-style: none;
+            display: inline-flex;
+            padding: 15px 30px;
             background-color: #290a80;
-            border-radius: 20px;/*Deixa a borda mais arredondada*/
+            border-radius: 20px;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
         }
         li {
             display: inline-flex;
+            align-items: center;
         }
         details {
             position: relative; /*Posicionado em relação ao elemento pai*/
@@ -66,7 +78,7 @@
             cursor: pointer;
         }
         .info-btn-desktop {
-            width: 160px;
+            width: 210px;
             display: flex; /*elemento flexivel*/
             align-items: center; /*alinha os elementos filho*/
             list-style: none; /*Exclui a linha do texto*/
@@ -107,8 +119,11 @@
             width: 25px;
             height: auto;
         }
-        .texto-principal{
-            font-size: 42px; /*Tamanho da fonte*/
+        .explorar {
+            display: none;
+        }
+        .titulo-principal{
+            font-size: 36px; /*Tamanho da fonte*/
             text-align: start; /*alinhamento*/
         }     
         .destaque-laranja{
@@ -119,15 +134,26 @@
             color: #19429a;
             font-weight: 700;
         }
-        .theme-btn {
-            color: #FFFFFF;
-            font-size: 30px;
+        .theme-toggle {
+            background: none;
+            border: none;
+            display: inline;
+            cursor: pointer;
         }
+        .sun-icon{
+            width: 42px;
+            height: auto;
+        }
+
         @media (max-width: 768px) {
             body {
                 background-image: none;
             }
+            .banner-principal {
+                max-width: 290px;
+            }
             .navegate {
+                z-index: 99;
                 font-size: 1rem;
                 position: fixed;
                 display: flex;
@@ -136,13 +162,16 @@
                 left: 1rem;
                 right: 1rem;
             }
+            .explorar {
+                display: inline;
+            }
             .user-drop {
                 top: auto;
                 bottom: 100%;
                 flex-direction: column-reverse;
             }
             .info-btn-mobile {
-                width: 25px;
+                width: 18px;
                 display: flex;
             }
             .info-btn-desktop {
@@ -188,23 +217,28 @@
                         <img class="icon" src="assets/images/info.png">
                         <span class="info-txt">Como funciona</span>
 
+                    <!--MODO CLARO/MODO ESCURO-->
+                    <button type="button" class="theme-toggle">
+                        <img class="sun-icon" src="assets/images/sun.png" alt="Mudar para o modo escuro">
+                    </button>
+
                     <a class="explorar" href="explorar.html">
                         <img class="icon" src="assets/images/search.png">
                     </a>
-
-                    <label for="theme-toggle" class="theme-btn">
-                        <span class="theme-icon">☀️</span>
-                        <span class="theme-icon">🌙</span>
-                    </label>
                 </li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <section>
+        <h1 class="titulo-principal">CONECTANDO <span class="destaque-laranja">TALENTOS</span> A <span class="destaque-azul">OPORTUNIDADES</span>.</h1>
+
+        <section class="section_1">
             <div class="banner-principal">
-            <h1 class="texto-principal">Conectando <span class="destaque-laranja">talentos</span> a <span class="destaque-azul">oportunidades</span>.</h1>
+            
+            <p class="texto-principal">Conectar talentos ás melhores oportunidades do mercado agora ficou simples e direto. Garanta seu cadastro profissional com taxa promocional de estreia e adquira visibilidade priorizada para fechar mais contratos.</p>
+            <p class="texto-principal">Conectar sua empresa ou prestação de serviço não precisa ser difícil. O  BoraFreela aproxima você do mercado com eficiência e sem burocracia.</p>
+            <p class="texto-principal">Chega de perder horas buscando oportunidades. O Borafreela une profissionais autônomos e empresas de forma rápida, trazendo a segurança e o reconhecimento que seu trabalho merece.</p>
+            <p class="texto-principal">Aproveite as condições especiais antes que a condição mude.</p>
             </div>
         </section>
     </main>
