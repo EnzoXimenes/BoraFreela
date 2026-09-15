@@ -52,6 +52,7 @@
             padding: 1em;
         }
        .navegate {
+            min-width: 60px;
             list-style: none;
             display: inline-flex;
             padding: 15px 30px;
@@ -78,7 +79,7 @@
             cursor: pointer;
         }
         .info-btn-desktop {
-            width: 210px;
+            width: 190px;
             display: flex; /*elemento flexivel*/
             align-items: center; /*alinha os elementos filho*/
             list-style: none; /*Exclui a linha do texto*/
@@ -86,6 +87,9 @@
             color: #FFFFFF;
             cursor: pointer; /*Muda o icone do cursor*/
             gap: 8px;
+        }
+        .info-txt {
+            width: 85px;
         }
         .info-btn-mobile {
             display: none;
@@ -153,6 +157,7 @@
                 max-width: 290px;
             }
             .navegate {
+                width: 100px;
                 z-index: 99;
                 font-size: 1rem;
                 position: fixed;
@@ -171,7 +176,7 @@
                 flex-direction: column-reverse;
             }
             .info-btn-mobile {
-                width: 18px;
+                width: 18ZZpx;
                 display: flex;
             }
             .info-btn-desktop {
@@ -193,25 +198,27 @@
         
         <nav>
             <ul class="navegate">
-                <details>
-                    <!--BOTÃO DA GAVETA USUARIO-->
-                    <summary class="user-btn">
-                        <img class="icon" src="assets/images/user.png">
-                        <span>Usuário</span>
-                    </summary>
-                        
-                    <!--GAVETA DO BOTÃO DO USUARIO-->
-                    <div class="user-drop">
-                        <a class="drop-links" href="profile.html">Perfil</a>
-                        <a class="drop-links" href="login.html">login</a>
-                        <a class="drop-links" href="cadastro.html">Sign up</a>
-                        <a class="login-btn" href="login.html">
-                            <span>Entrar</span>
-                            <img class="userIcon" src="assets/images/logout.png">
-                        </a>
-                    </div>    
-                </details>
-
+                <li>
+                    <details>
+                        <!--BOTÃO DA GAVETA DE USUARIO-->
+                        <summary class="user-btn">
+                            <img class="icon" src="assets/images/user.png">
+                            <span>Usuário</span>
+                        </summary>
+                            
+                        <!--GAVETA DO USUARIO-->
+                        <div class="user-drop">
+                            <a class="drop-links" href="profile.html">Perfil</a>
+                            <a class="drop-links" href="login.html">login</a>
+                            <a class="drop-links" href="cadastro.html">Sign up</a>
+                            <a class="login-btn" href="login.html">
+                                <span>Entrar</span>
+                                <img class="userIcon" src="assets/images/logout.png">
+                            </a>
+                        </div>    
+                    </details>
+                </li>
+                
                 <li>    <!--LINKS DA NAV BAR-->
                     <a class="info-btn-desktop" href="comofunciona.html">
                         <img class="icon" src="assets/images/info.png">
@@ -222,6 +229,9 @@
                         <img class="sun-icon" src="assets/images/sun.png" alt="Mudar para o modo escuro">
                     </button>
 
+                </li>
+
+                <li>
                     <a class="explorar" href="explorar.html">
                         <img class="icon" src="assets/images/search.png">
                     </a>
