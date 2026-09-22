@@ -45,11 +45,13 @@
         .banner-principal{
             background-color: #f8f8fa;
             position: absolute;
+            border: 1px solid var(--azul-escuro);
             left: 3rem;
             border-radius: 1rem;
             color: var(--azul-escuro);
             max-width: 50%;
             padding: 1em;
+            box-shadow: 0px 4px 10px 0px rgba(0, 6, 85, 0.2);
         }
        .navegate {
             min-width: 60px;
@@ -79,7 +81,6 @@
             cursor: pointer;
         }
         .info-btn-desktop {
-            width: 190px;
             display: flex; /*elemento flexivel*/
             align-items: center; /*alinha os elementos filho*/
             list-style: none; /*Exclui a linha do texto*/
@@ -87,9 +88,6 @@
             color: #FFFFFF;
             cursor: pointer; /*Muda o icone do cursor*/
             gap: 8px;
-        }
-        .info-txt {
-            width: 85px;
         }
         .info-btn-mobile {
             display: none;
@@ -154,10 +152,49 @@
                 background-image: none;
             }
             .banner-principal {
+                background-color: #f8f8fa;
                 max-width: 290px;
             }
             .navegate {
-                width: 100px;
+                min-width: 70%;
+                max-width: 89%;
+                z-index: 99;
+                font-size: 1rem;
+                position: fixed;
+                display: flex;
+                justify-content: flex-start;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+            }
+            .explorar {
+                display: inline;
+            }
+            .user-drop {
+                top: auto;
+                bottom: 100%;
+                flex-direction: column-reverse;
+            }
+            .info-btn-mobile {
+                width: 18ZZpx;
+                display: flex;
+            }
+            .info-btn-desktop {
+                display: none;
+            }
+        }
+/*--------------------TELAS MENORES (MOBILE)-----------------------*/
+        @media (max-width: 768px) {
+            body {
+                background-image: none;
+            }
+            .banner-principal {
+                background-color: #f8f8fa;
+                max-width: 290px;
+            }
+            .navegate {
+                min-width: 70%;
+                max-width: 89%;
                 z-index: 99;
                 font-size: 1rem;
                 position: fixed;
@@ -223,15 +260,17 @@
                     <a class="info-btn-desktop" href="comofunciona.html">
                         <img class="icon" src="assets/images/info.png">
                         <span class="info-txt">Como funciona</span>
-
-                    <!--MODO CLARO/MODO ESCURO-->
-                    <button type="button" class="theme-toggle">
-                        <img class="sun-icon" src="assets/images/sun.png" alt="Mudar para o modo escuro">
-                    </button>
-
                 </li>
 
                 <li>
+                        <!--MODO CLARO/MODO ESCURO-->
+                    <button type="button" class="theme-toggle">
+                        <img class="sun-icon" src="assets/images/sun.png" alt="Mudar para o modo escuro">
+                    </button>
+                </li>
+
+                <li>
+                        <!--PAGINA DE BUSCA-->
                     <a class="explorar" href="explorar.html">
                         <img class="icon" src="assets/images/search.png">
                     </a>
@@ -240,21 +279,19 @@
         </nav>
     </header>
     <main>
-        <h1 class="titulo-principal">CONECTANDO <span class="destaque-laranja">TALENTOS</span> A <span class="destaque-azul">OPORTUNIDADES</span>.</h1>
+        <h1 class="titulo-principal" alt="Conectando talentos à oportunidades">CONECTANDO <span class="destaque-laranja">TALENTOS</span> A <span class="destaque-azul">OPORTUNIDADES</span>.</h1>
 
         <section class="section_1">
             <div class="banner-principal">
             
             <p class="texto-principal">Conectar talentos ás melhores oportunidades do mercado agora ficou simples e direto. Garanta seu cadastro profissional com taxa promocional de estreia e adquira visibilidade priorizada para fechar mais contratos.</p>
-            <p class="texto-principal">Conectar sua empresa ou prestação de serviço não precisa ser difícil. O  BoraFreela aproxima você do mercado com eficiência e sem burocracia.</p>
+            <p class="texto-principal">Conectar sua empresa ou contratar prestação de serviço não precisa ser difícil. O BoraFreela aproxima você do mercado com eficiência e sem burocracia.</p>
             <p class="texto-principal">Chega de perder horas buscando oportunidades. O Borafreela une profissionais autônomos e empresas de forma rápida, trazendo a segurança e o reconhecimento que seu trabalho merece.</p>
             <p class="texto-principal">Aproveite as condições especiais antes que a condição mude.</p>
             </div>
         </section>
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
 </body>
 </html>
