@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoraFreela</title>
+<style>
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+/* IMAGEM E TEXTO NA PARTE DE CIMA DO FORMULARIO*/
+.header-form {
+    display: flex;
+    align-items: center;     
+    justify-content: center;  
+    gap: 15px;               
+    margin-bottom: 20px;     
+}
+
+
+.header-form img {
+    height: 50px;           
+    width: auto;             
+}
+
+.header-form h2 {
+    font-size: 30px;
+    margin: 0;
+    color: #FF6B00;
+    font-family: sans-serif;
+}
+/*POSSUI CONTA*/
+.link-possui-conta{
+    text-decoration: none;
+    color: #FF6B00;
+}
+.possui-conta{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*TEXTO DOS INPUT*/
+.email, .username, .senha{
+    margin: 10px 3px 0px 3px;
+    font-size: 30px;
+    display: inline-block;  
+    color: #290a80;
+}
+/*FORMULARIOS*/
+.form-email, .form-username, .form-senha{
+    font-size: 20px;
+    padding: 12px;
+    width: 90%; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    background-color: rgb(219, 217, 215);
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1); 
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white; 
+    padding: 40px; 
+    width: 100%; 
+    max-width: 500px; 
+    border-radius: 15px; 
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box;
+}
+
+/* ESTILO PARA O BLOCO DO CHECKBOX */
+.container-checkbox {
+    display: flex;
+    align-items: center;       
+    justify-content: center;    
+    gap: 10px;                 
+    margin-top: 25px;          
+    width: 90%;                
+    cursor: pointer;
+}
+
+.container-checkbox label {
+    font-size: 18px;           
+    color: #290a80;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 20px;               
+    height: 20px;
+    cursor: pointer;
+}
+/* BOTÃO */
+button{
+    border: none;
+    background-color: #290a80;
+    color: white;
+    font-size: 30px;
+    padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 20px;         
+    border-radius: 15px; 
+    width: 90%; 
+    transition: background-color 1s ease; 
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1); 
+}
+
+button:hover{
+    background-color: #FF6B00;
+}
+</style>
+</head>
+<body> 
+  <form action="/enviar-dados" method="post">
+
+        <div class="header-form">
+            <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
+            <h2>Cadastro</h2>
+        </div>
+        <div class="possui-conta">
+            <label for="possui-conta">Já possui uma conta? <a href="#" class="link-possui-conta">Clique aqui</a></label>
+        </div>
+        <label for="email" class="email">Email</label><br>
+        <input type="email" class="form-email" id="email" name="email" placeholder="name@exemplo.com" required>
+   
+        <label for="username" class="username">Username</label><br>
+        <input type="text" class="form-username" id="username" name="username" placeholder="Digite seu username aqui" required>
+  
+        <label for="senha" class="senha">Senha</label><br>
+        <input type="password" class="form-senha" id="senha" name="senha" placeholder="Mínimo 8 digitos" minlength="8" required>
+
+        
+        <div class="container-checkbox">
+            <input type="checkbox" class="checkbox" id="termos" required>
+            <label for="termos">Aceitar termos e privacidades</label>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+
+  </form>
+</body>
+</html>
