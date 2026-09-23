@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoraFreela</title>
+<style>
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    font-family: sans-serif;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+/* IMAGEM E TEXTO NA PARTE DE CIMA DO FORMULARIO*/
+.header-form {
+    display: flex;
+    align-items: center;     
+    justify-content: center;  
+    gap: 15px;               
+    margin-bottom: 20px;     
+}
+
+.header-form img {
+    height: 45px;        
+    width: auto;             
+}
+
+.header-form h2 {
+    font-size: 28px;
+    margin: 0;
+    color: #FF6B00;
+}
+
+/*POSSUI CONTA*/
+.link-sem-conta{
+    text-decoration: none;
+    color: #FF6B00;
+}
+.sem-conta{
+    font-size: 16px; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/*TEXTO DOS INPUT*/
+.email, .senha{
+    margin: 15px 3px 5px 3px;
+    font-size: 20px; 
+    display: inline-block;  
+    color: #290a80;
+    font-weight: bold;
+}
+
+/*FORMULARIOS*/
+.form-email, .form-senha{
+    font-size: 16px; 
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    background-color: rgb(219, 217, 215);
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.05); 
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white; 
+    padding: 40px; 
+    width: 100%; 
+    max-width: 450px; 
+    border-radius: 15px; 
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box;
+}
+
+/* ESTILO PARA O BLOCO DO CHECKBOX */
+.container-checkbox {
+    display: flex;
+    align-items: center;       
+    justify-content: center;    
+    gap: 10px;                 
+    margin-top: 25px;          
+    width: 100%;                
+    cursor: pointer;
+}
+
+.container-checkbox label {
+    font-size: 15px;         
+    color: #290a80;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 18px;               
+    height: 18px;
+    cursor: pointer;
+}
+
+/* BOTÃO */
+button{
+    border: none;
+    background-color: #290a80;
+    color: white;
+    font-size: 22px; 
+    padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 25px;         
+    border-radius: 15px; 
+    width: 100%; 
+    transition: background-color 0.3s ease; 
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1); 
+}
+
+button:hover{
+    background-color: #FF6B00;
+}
+
+/* AJUSTE PARA CELULAR */
+@media (max-width: 480px) {
+    form {
+        padding: 25px 20px; 
+    }
+    
+    .header-form h2 {
+        font-size: 24px; 
+    }
+    
+    .email, .username, .senha {
+        font-size: 18px; 
+    }
+    
+    button {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+<body> 
+  <form action="/enviar-dados" method="post">
+
+        <div class="header-form">
+            <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
+            <h2>Login</h2>
+        </div>
+        <div class="sem-conta">
+            <span>Não possui conta? <a href="cadastro.html" class="link-sem-conta">Clique aqui</a></span>
+        </div>
+        
+        <div style="width: 100%; text-align: left;">
+            <label for="email" class="email">Email</label>
+            <input type="email" class="form-email" id="email" name="email" placeholder="name@exemplo.com" required>
+      
+            <label for="senha" class="senha">Senha</label>
+            <input type="password" class="form-senha" id="senha" name="senha" placeholder="Mínimo 8 dígitos" minlength="8" required>
+        </div>
+
+        <div class="container-checkbox">
+            <input type="checkbox" class="checkbox" id="termos" required>
+            <label for="termos">Aceitar termos e privacidades</label>
+        </div>
+
+        <button type="submit">Entrar</button>
+
+  </form>
+</body>
+</html>
