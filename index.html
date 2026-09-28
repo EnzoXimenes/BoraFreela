@@ -24,6 +24,11 @@
         min-height: 100vh;
         }
 
+        main{
+            background-color: #2d2d4b;
+            width: 55%;
+        }
+
         header{
             display: flex;
             align-items: center;/* Mantem logo e barra na mesma altura */
@@ -44,17 +49,16 @@
         }
         .banner-principal{
             background-color: #f8f8fa;
-            position: absolute;
+            display: flex;
             border: 1px solid var(--azul-escuro);
-            left: 3rem;
             border-radius: 1rem;
             color: var(--azul-escuro);
-            max-width: 50%;
+            flex-wrap: wrap;
+            
             padding: 1em;
             box-shadow: 0px 4px 10px 0px rgba(0, 6, 85, 0.2);
         }
        .navegate {
-            min-width: 60px;
             list-style: none;
             display: inline-flex;
             padding: 15px 30px;
@@ -139,12 +143,77 @@
         .theme-toggle {
             background: none;
             border: none;
-            display: inline;
+            display: flex;
+            gap: 8px;
             cursor: pointer;
         }
         .sun-icon{
             width: 42px;
             height: auto;
+        }
+        .cards{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        }
+        .desenvolvedor{
+            background-color: #19429a;
+            height: 200px;
+            text-align: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 25px;
+            padding: 20px;
+        }
+        .desenvolvedor:hover{
+            cursor: pointer;
+            background-color: #2958bd;
+        }
+        .designer{
+            background-color:#FF6B00;
+            height: 200px;
+            text-align: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 25px;
+            padding: 20px;
+        }
+        .designer:hover{
+            background-color: #f68534;
+            cursor: pointer;
+        }
+        .video{
+            background-color:darkmagenta;
+            height: 200px;
+            text-align: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 25px;
+            padding: 20px;
+        }
+        .video:hover{
+            background-color: rgb(193, 21, 193);
+            cursor: pointer;
+        }
+        .todas-categorias{
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            background-color: transparent;
+            border-color: gray;
+            font-size: 20px;
+            margin-left: 265px;
+            margin-top: 20px;
+            border-style: solid;
+            color: rgb(17, 101, 204);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .todas-categorias:hover{
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -231,7 +300,7 @@
 
         <a class="info-btn-mobile" href="comofunciona.html">
             <img class="userIcon" src="assets/images/infoblack.png">
-        </a>ull
+        </a>
         
         <nav>
             <ul class="navegate">
@@ -266,6 +335,7 @@
                         <!--MODO CLARO/MODO ESCURO-->
                     <button type="button" class="theme-toggle">
                         <img class="sun-icon" src="assets/images/sun.png" alt="Mudar para o modo escuro">
+                        <span style="color: #FFFFFF; display: flex; align-items: center; font-size: 1rem;"><strong>Modo claro</strong></span>
                     </button>
                 </li>
 
@@ -281,14 +351,23 @@
     <main>
         <h1 class="titulo-principal" alt="Conectando talentos à oportunidades">CONECTANDO <span class="destaque-laranja">TALENTOS</span> A <span class="destaque-azul">OPORTUNIDADES</span>.</h1>
 
-        <section class="section_1">
-            <div class="banner-principal">
-                <p class="texto-principal">Conectar talentos ás melhores oportunidades do mercado agora ficou simples e direto. Garanta seu cadastro profissional com taxa promocional de estreia e adquira visibilidade priorizada para fechar mais contratos.</p>
-                <p class="texto-principal">Conectar sua empresa ou contratar prestação de serviço não precisa ser difícil. O BoraFreela aproxima você do mercado com eficiência e sem burocracia.</p>
-                <p class="texto-principal">Chega de perder horas buscando oportunidades. O Borafreela une profissionais autônomos e empresas de forma rápida, trazendo a segurança e o reconhecimento que seu trabalho merece.</p>
-                <p class="texto-principal">Aproveite as condições especiais antes que a condição mude.</p>
-            </div>
+        <section class="banner-principal">
+            <p class="texto-principal">Conectar talentos ás melhores oportunidades do mercado agora ficou simples e direto. Garanta seu cadastro profissional com taxa promocional de estreia e adquira visibilidade priorizada para fechar mais contratos.</p>
+            <p class="texto-principal">Conectar sua empresa ou contratar prestação de serviço não precisa ser difícil. O BoraFreela aproxima você do mercado com eficiência e sem burocracia.</p>
+            <p class="texto-principal">Chega de perder horas buscando oportunidades. O Borafreela une profissionais autônomos e empresas de forma rápida, trazendo a segurança e o reconhecimento que seu trabalho merece.</p>
+            <p class="texto-principal">Aproveite as condições especiais antes que a condição mude.</p>
         </section>
+
+        <section>
+            <ul class="cards">
+                <li class="desenvolvedor">Desenvolvedor</li>
+                <li class="designer">Desginer</li>
+                <li class="video">Video Maker</li>
+            </ul>
+        </section>
+
+        <button class="todas-categorias">Ver categorias</button>
+
     </main>
 
     <footer></footer>
