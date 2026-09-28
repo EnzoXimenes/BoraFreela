@@ -25,8 +25,8 @@
         }
 
         main{
-            background-color: #2d2d4b;
-            width: 55%;
+            /*background-color: #2d2d4b;*/
+            width: 57%;
         }
 
         header{
@@ -49,6 +49,7 @@
         }
         .banner-principal{
             background-color: #f8f8fa;
+            margin-left: 2rem;
             display: flex;
             border: 1px solid var(--azul-escuro);
             border-radius: 1rem;
@@ -67,6 +68,7 @@
             flex-direction: row;
             align-items: center;
             box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+            gap: 15px;
         }
         li {
             display: inline-flex;
@@ -153,14 +155,11 @@
         }
         .cards{
         display: flex;
-        justify-content: space-between;
-        gap: 20px;
+        justify-content: space-evenly;
         }
         .desenvolvedor{
             background-color: #19429a;
             height: 200px;
-            text-align: center;
-            justify-content: center;
             border-radius: 10px;
             color: white;
             font-size: 25px;
@@ -173,8 +172,6 @@
         .designer{
             background-color:#FF6B00;
             height: 200px;
-            text-align: center;
-            justify-content: center;
             border-radius: 10px;
             color: white;
             font-size: 25px;
@@ -187,8 +184,6 @@
         .video{
             background-color:darkmagenta;
             height: 200px;
-            text-align: center;
-            justify-content: center;
             border-radius: 10px;
             color: white;
             font-size: 25px;
@@ -198,20 +193,7 @@
             background-color: rgb(193, 21, 193);
             cursor: pointer;
         }
-        .todas-categorias{
-            justify-content: center;
-            text-align: center;
-            display: flex;
-            background-color: transparent;
-            border-color: gray;
-            font-size: 20px;
-            margin-left: 265px;
-            margin-top: 20px;
-            border-style: solid;
-            color: rgb(17, 101, 204);
-            border-radius: 5px;
-            padding: 5px;
-        }
+
         .todas-categorias:hover{
             cursor: pointer;
         }
@@ -316,10 +298,9 @@
                         <div class="user-drop">
                             <a class="drop-links" href="profile.html">Perfil</a>
                             <a class="drop-links" href="login.html">login</a>
-                            <a class="drop-links" href="cadastro.html">Sign up</a>
                             <a class="login-btn" href="login.html">
-                                <span>Entrar</span>
-                                <img class="userIcon" src="assets/images/logout.png">
+                                <span>Cadastrar</span>
+                                <img class="userIcon" src="assets/images/signup.png">
                             </a>
                         </div>    
                     </details>
@@ -328,7 +309,7 @@
                 <li>    <!--LINKS DA NAV BAR-->
                     <a class="info-btn-desktop" href="comofunciona.html">
                         <img class="icon" src="assets/images/info.png">
-                        <span class="info-txt">Como funciona</span>
+                        <span class="info-txt">Sobre</span>
                 </li>
 
                 <li>
@@ -365,9 +346,6 @@
                 <li class="video">Video Maker</li>
             </ul>
         </section>
-
-        <button class="todas-categorias">Ver categorias</button>
-
     </main>
 
     <footer></footer>
