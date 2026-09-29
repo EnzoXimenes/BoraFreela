@@ -1,353 +1,1332 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/png" href="favcon.png">
+
     <title>BoraFreela</title>
-    <link rel="stylesheet" href="Style.css">
-    
+
     <style>
+
+        /* 
+           CONFIGURAÇÕES
+         */
+
         :root {
-            --azul-escuro: #290a80;
-            --laranja: #FF6B00;
-            --branco: #FFFFFF;
-            --background-azul: #2d2d4b;
+            --azul: #290a80;
+            --azul-claro: #19429a;
+            --laranja: #ff6b00;
+            --branco: #ffffff;
+            --cinza: #f7f7fa;
+            --cinza-2: #eeeeF3;
+            --texto: #252525;
+            --texto-claro: #666666;
+            --borda: #dedee7;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-        font-family: 'Comfortaa-light', sans-serif;
-        background: #FFFFFF;
-        background-image: url(assets/images/bannerprincipal.png);
-        background-size: contain;
-        background-position: 50vw center;
-        background-repeat: no-repeat;
-        min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--branco);
+            color: var(--texto);
         }
 
-        main{
-            /*background-color: #2d2d4b;*/
-            width: 57%;
-        }
-
-        header{
-            display: flex;
-            align-items: center;/* Mantem logo e barra na mesma altura */
-            justify-content: flex-start; /* Alinha tudo comecando da esquerda */
-            gap: 20px;/* Define a distancia exata entre o logo e os links (muda o nemero se quiser mais perto/longe) */
-            padding: 0 5%;  /*No lugaar do 0 define a distancia da parte de cima do site, e a % define a posicaoo comecando da esquerda*/   
-        }
-
-        .logo-container {
-            width: 150px;
-            height: auto;
-            align-items: center; /*Alinhar itens*/
-            display: flex;
-        }
-        .logo-container img {
-            width: 100%;
-            height: auto;
-        }
-        .banner-principal{
-            background-color: #f8f8fa;
-            margin-left: 2rem;
-            display: flex;
-            border: 1px solid var(--azul-escuro);
-            border-radius: 1rem;
-            color: var(--azul-escuro);
-            flex-wrap: wrap;
-            
-            padding: 1em;
-            box-shadow: 0px 4px 10px 0px rgba(0, 6, 85, 0.2);
-        }
-       .navegate {
-            list-style: none;
-            display: inline-flex;
-            padding: 15px 30px;
-            background-color: #290a80;
-            border-radius: 20px;
-            flex-direction: row;
-            align-items: center;
-            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-            gap: 15px;
-        }
-        li {
-            display: inline-flex;
-            align-items: center;
-        }
-        details {
-            position: relative; /*Posicionado em relação ao elemento pai*/
-        }        
-        .user-btn {
-            width: 100px; /*largura do elemento*/
-            display: flex; /*elemento flexivel*/
-            align-items: center; /*alinha os elementos filho*/
-            list-style: none; /*Exclui a linha do texto*/
-            flex-direction: row; /*Muda a direção do conteudo do elemento*/
-            color: #FFFFFF;
-            cursor: pointer;
-        }
-        .info-btn-desktop {
-            display: flex; /*elemento flexivel*/
-            align-items: center; /*alinha os elementos filho*/
-            list-style: none; /*Exclui a linha do texto*/
-            flex-direction: row; /*Muda a direção do conteudo do elemento*/
-            color: #FFFFFF;
-            cursor: pointer; /*Muda o icone do cursor*/
-            gap: 8px;
-        }
-        .info-btn-mobile {
-            display: none;
-        }
-        .login-btn {
-            color: var(--branco);
-            display: flex;
-            align-items: center;
-            gap: 8px; /*espaçamento entre os elementos*/
-        }
-        .icon {
-            width: 30px; /*Largura*/
-            height: auto; /*Altura é redimensionada automaticamente em relação a largura*/
-        }
-        .user-drop {
-            background-color: var(--azul-escuro);
-            position: absolute; /*Posição em relação ao elemento pai*/
-            padding: 8px;
-            display: flex; /*Lista*/
-            flex-direction: column; /*Estilo da lista*/
-            border-radius: 10px; /*Suaviza a borda*/
-            gap: 10px;
-            }
-        .drop-links {
-            color: var(--branco);
-        }
         a {
             text-decoration: none;
         }
-        .userIcon {
+
+        ul {
+            list-style: none;
+        }
+
+
+        /* 
+           NAVBAR
+         */
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 15px 5%;
+        }
+
+        .logo {
+            width: 150px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav {
+            list-style: none;
+            display: inline-flex;
+            padding: 15px 30px;
+            background-color: var(--azul);
+            border-radius: 20px;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            gap: 15px;
+        }
+
+        .nav li {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        details {
+            position: relative;
+        }
+
+        .usuario {
+            width: 100px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--branco);
+            cursor: pointer;
+        }
+
+        .sobre {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--branco);
+            cursor: pointer;
+        }
+
+        .sobre-mob {
+            display: none;
+        }
+
+        .login {
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ico {
+            width: 30px;
+            height: auto;
+        }
+
+        .ico-user {
             width: 25px;
             height: auto;
         }
-        .explorar {
-            display: none;
+
+        .menu {
+            background-color: var(--azul);
+            position: absolute;
+            top: 35px;
+            left: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            gap: 10px;
+            min-width: 130px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+            z-index: 20;
         }
-        .titulo-principal{
-            font-size: 36px; /*Tamanho da fonte*/
-            text-align: start; /*alinhamento*/
-        }     
-        .destaque-laranja{
-             color: var(--laranja);
-             font-weight: 700;
+
+        .menu a {
+            color: var(--branco);
+            padding: 5px;
+            border-radius: 5px;
         }
-        .destaque-azul{
-            color: #19429a;
-            font-weight: 700;
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.12);
         }
-        .theme-toggle {
+
+        .tema {
             background: none;
             border: none;
             display: flex;
+            align-items: center;
             gap: 8px;
             cursor: pointer;
         }
-        .sun-icon{
+
+        .sol {
             width: 42px;
             height: auto;
         }
-        .cards{
-        display: flex;
-        justify-content: space-evenly;
+
+        .tema span {
+            color: var(--branco);
+            font-size: 1rem;
         }
-        .desenvolvedor{
-            background-color: #19429a;
-            height: 200px;
-            border-radius: 10px;
-            color: white;
-            font-size: 25px;
-            padding: 20px;
+
+        .explorar {
+            display: none;
         }
-        .desenvolvedor:hover{
+
+
+        /* 
+           HERO
+         */
+
+        .hero {
+            min-height: 530px;
+            display: flex;
+            align-items: center;
+            padding: 55px 5% 70px;
+            background-image: url("assets/images/bannerprincipal.png");
+            background-size: 46%;
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-conteudo {
+            width: 58%;
+            max-width: 700px;
+        }
+
+        .titulo {
+            font-size: 46px;
+            line-height: 1.12;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
+        }
+
+        .laranja {
+            color: var(--laranja);
+        }
+
+        .azul {
+            color: var(--azul-claro);
+        }
+
+        .subtitulo {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--texto-claro);
+            max-width: 600px;
+            margin-bottom: 28px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .botao-principal {
+            background-color: var(--laranja);
+            color: var(--branco);
+        }
+
+        .botao-principal:hover {
+            background-color: #e85f00;
+        }
+
+        .botao-sec {
+            border: 1px solid var(--azul);
+            color: var(--azul);
+            background-color: var(--branco);
+        }
+
+        .botao-sec:hover {
+            background-color: #f2f0fa;
+        }
+
+
+        /* 
+           TEXTO INTRODUÇÃO
+         */
+
+        .intro {
+            background-color: var(--cinza);
+            padding: 60px 5%;
+        }
+
+        .intro-caixa {
+            max-width: 850px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            color: var(--azul);
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--texto-claro);
+        }
+
+
+        /* 
+           CATEGORIAS
+         */
+
+        .categorias {
+            padding: 65px 5%;
+        }
+
+        .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 25px;
+            gap: 20px;
+        }
+
+        .cabecalho h2 {
+            font-size: 30px;
+            color: var(--azul);
+            margin-bottom: 5px;
+        }
+
+        .cabecalho p {
+            color: var(--texto-claro);
+            font-size: 15px;
+        }
+
+        .ver-todas {
+            color: var(--azul);
+            font-weight: bold;
+            font-size: 14px;
+            background-color: transparent;
+            padding: 10px;
+            border: 1px solid var(--azul);
+            border-radius: 8px;
+        }
+        .ver-todas:hover{
+           background-color: #f2f0fa;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            max-width: 1050px;
+        }
+
+        .card {
+            min-height: 155px;
+            border-radius: 13px;
+            padding: 22px;
+            color: var(--branco);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
             cursor: pointer;
+        }
+
+        .card span {
+            font-size: 13px;
+            font-weight: normal;
+            opacity: 0.9;
+            margin-top: 6px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+        }
+
+        .dev {
+            background-color: var(--azul-claro);
+        }
+
+        .design {
+            background-color: var(--laranja);
+        }
+
+        .video {
+            background-color: #8b168b;
+        }
+
+        .marketing {
+            background-color: #d53a35;
+        }
+
+        .traducao {
+            background-color: #9a3030;
+        }
+
+        .educacao {
+            background-color: #6d8e35;
+        }
+
+        .dev:hover {
             background-color: #2958bd;
         }
-        .designer{
-            background-color:#FF6B00;
-            height: 200px;
-            border-radius: 10px;
-            color: white;
-            font-size: 25px;
-            padding: 20px;
-        }
-        .designer:hover{
+
+        .design:hover {
             background-color: #f68534;
-            cursor: pointer;
-        }
-        .video{
-            background-color:darkmagenta;
-            height: 200px;
-            border-radius: 10px;
-            color: white;
-            font-size: 25px;
-            padding: 20px;
-        }
-        .video:hover{
-            background-color: rgb(193, 21, 193);
-            cursor: pointer;
         }
 
-        .todas-categorias:hover{
-            cursor: pointer;
+        .video:hover {
+            background-color: #a51da5;
         }
 
+        .marketing:hover {
+            background-color: #e34c47;
+        }
+
+        .traducao:hover {
+            background-color: #ad3939;
+        }
+
+        .educacao:hover {
+            background-color: #7d9f40;
+        }
+
+
+        /* 
+           COMO FUNCIONA
+        */
+
+        .como {
+            background-color: var(--cinza);
+            padding: 65px 5%;
+        }
+
+        .como-titulo {
+            text-align: center;
+            margin-bottom: 40px;
+            font-style: oblique;
+        }
+
+        .como-titulo h2 {
+            color: var(--azul);
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .como-titulo p {
+            color: var(--texto-claro);
+        }
+
+        .passos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .passo {
+            background-color: var(--branco);
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .numero {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--azul);
+            color: var(--branco);
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .passo h3 {
+            margin-bottom: 9px;
+            color: var(--texto);
+        }
+
+        .passo p {
+            color: var(--texto-claro);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+
+        /* 
+           CHAMADA
+         */
+
+        .chamada {
+            padding: 65px 5%;
+        }
+
+        .chamada-caixa {
+            max-width: 1050px;
+            background-color: var(--azul);
+            color: var(--branco);
+            border-radius: 16px;
+            padding: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .chamada-texto {
+            max-width: 650px;
+        }
+
+        .chamada h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .chamada p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .botao-cadastro {
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .botao-cadastro:hover {
+            background-color: #e85f00;
+        }
+
+
+        /* 
+           RODAPÉ
+         */
+
+        footer {
+            background-color: #18152a;
+            color: var(--branco);
+            padding: 40px 5% 25px;
+        }
+
+        .rodape {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1100px;
+        }
+
+        .rodape-logo {
+            max-width: 300px;
+        }
+
+        .rodape-logo h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .rodape-logo span {
+            color: var(--laranja);
+        }
+
+        .rodape-logo p {
+            color: #c2c2ca;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .rodape-links h3 {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .rodape-links a {
+            display: block;
+            color: #c2c2ca;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .rodape-links a:hover {
+            color: var(--branco);
+        }
+
+        .direitos {
+            border-top: 1px solid #343143;
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #aaa8b3;
+            font-size: 13px;
+        }
+
+
+        /* 
+           CELULAR
+         */
+
         @media (max-width: 768px) {
-            body {
-                background-image: none;
+
+            header {
+                padding: 15px 20px;
+                gap: 12px;
             }
-            .banner-principal {
-                background-color: #f8f8fa;
-                max-width: 290px;
+
+            .logo {
+                width: 125px;
             }
-            .navegate {
-                min-width: 70%;
-                max-width: 89%;
-                z-index: 99;
-                font-size: 1rem;
+
+            .nav {
                 position: fixed;
-                display: flex;
-                justify-content: flex-start;
-                bottom: 1rem;
-                left: 1rem;
-                right: 1rem;
+                z-index: 99;
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+
+                min-width: auto;
+                max-width: none;
+
+                padding: 13px 18px;
+
+                justify-content: space-between;
+                gap: 10px;
+
+                border-radius: 18px;
             }
-            .explorar {
-                display: inline;
+
+            .usuario {
+                width: auto;
             }
-            .user-drop {
-                top: auto;
-                bottom: 100%;
-                flex-direction: column-reverse;
-            }
-            .info-btn-mobile {
-                width: 18ZZpx;
-                display: flex;
-            }
-            .info-btn-desktop {
+
+            .sobre {
                 display: none;
             }
-        }
-/*--------------------TELAS MENORES (MOBILE)-----------------------*/
-        @media (max-width: 768px) {
-            body {
-                background-image: none;
-            }
-            .banner-principal {
-                background-color: #f8f8fa;
-                max-width: 290px;
-            }
-            .navegate {
-                min-width: 70%;
-                max-width: 89%;
-                z-index: 99;
-                font-size: 1rem;
-                position: fixed;
+
+            .sobre-mob {
                 display: flex;
-                justify-content: flex-start;
-                bottom: 1rem;
-                left: 1rem;
-                right: 1rem;
+                align-items: center;
             }
-            .explorar {
-                display: inline;
+
+            .sobre-mob img {
+                width: 25px;
             }
-            .user-drop {
-                top: auto;
-                bottom: 100%;
-                flex-direction: column-reverse;
-            }
-            .info-btn-mobile {
-                width: 18ZZpx;
-                display: flex;
-            }
-            .info-btn-desktop {
+
+            .tema span {
                 display: none;
             }
+
+            .sol {
+                width: 32px;
+            }
+
+            .ico {
+                width: 27px;
+            }
+
+            .explorar {
+                display: flex;
+            }
+
+            .explorar img {
+                width: 27px;
+            }
+
+            .menu {
+                top: auto;
+                bottom: 40px;
+                left: -5px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: auto;
+                background-image: none;
+                padding: 45px 20px 55px;
+            }
+
+            .hero-conteudo {
+                width: 100%;
+            }
+
+            .titulo {
+                font-size: 34px;
+            }
+
+            .subtitulo {
+                font-size: 16px;
+            }
+
+            .botoes {
+                flex-wrap: wrap;
+            }
+
+
+            /* INTRO */
+
+            .intro {
+                padding: 45px 20px;
+            }
+
+            .intro h2 {
+                font-size: 25px;
+            }
+
+
+            /* CATEGORIAS */
+
+            .categorias {
+                padding: 50px 20px;
+            }
+
+            .cabecalho {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .card {
+                min-height: 130px;
+            }
+
+
+            /* COMO FUNCIONA */
+
+            .como {
+                padding: 50px 20px;
+            }
+
+            .passos {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+
+            /* CHAMADA */
+
+            .chamada {
+                padding: 50px 20px;
+            }
+
+            .chamada-caixa {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px 25px;
+            }
+
+            .chamada h2 {
+                font-size: 25px;
+            }
+
+
+            /* RODAPÉ */
+
+            footer {
+                padding: 35px 20px 100px;
+            }
+
+            .rodape {
+                flex-direction: column;
+            }
+
         }
+
+
+        /* 
+           CELULARES PEQUENOS
+         */
+
+        @media (max-width: 400px) {
+
+            .logo {
+                width: 110px;
+            }
+
+            .nav {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                padding: 12px 14px;
+            }
+
+            .titulo {
+                font-size: 29px;
+            }
+
+            .botoes {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .botao {
+                text-align: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: 100px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
-    <header> 
-        <div class="logo-container">
+
+
+    <!-- 
+         NAVBAR
+     -->
+
+    <header>
+
+        <div class="logo">
             <img src="assets/images/BoraFreela2.png" alt="BoraFreela">
         </div>
 
-        <a class="info-btn-mobile" href="comofunciona.html">
-            <img class="userIcon" src="assets/images/infoblack.png">
+        <!-- SOBRE NO CELULAR -->
+
+        <a class="sobre-mob" href="comofunciona.html">
+            <img src="assets/images/infoblack.png" alt="Sobre">
         </a>
-        
+
+
         <nav>
-            <ul class="navegate">
+
+            <ul class="nav">
+
+                <!-- USUÁRIO -->
+
                 <li>
+
                     <details>
-                        <!--BOTÃO DA GAVETA DE USUARIO-->
-                        <summary class="user-btn">
-                            <img class="icon" src="assets/images/user.png">
+
+                        <summary class="usuario">
+
+                            <img
+                                class="ico"
+                                src="assets/images/user.png"
+                                alt="Usuário"
+                            >
+
                             <span>Usuário</span>
+
                         </summary>
-                            
-                        <!--GAVETA DO USUARIO-->
-                        <div class="user-drop">
-                            <a class="drop-links" href="profile.html">Perfil</a>
-                            <a class="drop-links" href="cadastro.html">Cadastrar</a>
-                            <a class="login-btn" href="login.html">
-                                <span>Cadastrar</span>
-                                <img class="userIcon" src="assets/images/signup.png">
+
+
+                        <div class="menu">
+
+                            <a href="profile.html">
+                                Perfil
                             </a>
-                        </div>    
+
+                            <a href="cadastro.html">
+                                Cadastrar
+                            </a>
+
+                            <a class="login" href="login.html">
+
+                                <span>Login</span>
+
+                                <img
+                                    class="ico-user"
+                                    src="assets/images/signup.png"
+                                    alt="Login"
+                                >
+
+                            </a>
+
+                        </div>
+
                     </details>
-                </li>
-                
-                <li>    <!--LINKS DA NAV BAR-->
-                    <a class="info-btn-desktop" href="comofunciona.html">
-                        <img class="icon" src="assets/images/info.png">
-                        <span class="info-txt">Sobre</span>
+
                 </li>
 
-                <li>
-                        <!--MODO CLARO/MODO ESCURO-->
-                    <button type="button" class="theme-toggle">
-                        <img class="sun-icon" src="assets/images/sun.png" alt="Mudar para o modo escuro">
-                        <span style="color: #FFFFFF; display: flex; align-items: center; font-size: 1rem;"><strong>Modo claro</strong></span>
-                    </button>
-                </li>
+
+                <!-- SOBRE -->
 
                 <li>
-                        <!--PAGINA DE BUSCA-->
-                    <a class="explorar" href="explorar.html">
-                        <img class="icon" src="assets/images/search.png">
+
+                    <a class="sobre" href="comofunciona.html">
+
+                        <img
+                            class="ico"
+                            src="assets/images/info.png"
+                            alt="Sobre"
+                        >
+
+                        <span>Sobre</span>
+
                     </a>
+
                 </li>
+
+
+                <!-- MODO CLARO -->
+
+                <li>
+
+                    <button type="button" class="tema">
+
+                        <img
+                            class="sol"
+                            src="assets/images/sun.png"
+                            alt="Mudar para o modo escuro"
+                        >
+
+                        <span>
+                            <strong>Modo claro</strong>
+                        </span>
+
+                    </button>
+
+                </li>
+
+
+                <!-- BUSCA -->
+
+                <li>
+
+                    <a class="explorar" href="explorar.html">
+
+                        <img
+                            class="ico"
+                            src="assets/images/search.png"
+                            alt="Explorar"
+                        >
+
+                    </a>
+
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
+
+
+
+    <!-- 
+         HERO
+     -->
+
     <main>
-        <h1 class="titulo-principal" alt="Conectando talentos à oportunidades">CONECTANDO <span class="destaque-laranja">TALENTOS</span> A <span class="destaque-azul">OPORTUNIDADES</span>.</h1>
 
-        <section class="banner-principal">
-            <p class="texto-principal">Conectar talentos ás melhores oportunidades do mercado agora ficou simples e direto. Garanta seu cadastro profissional com taxa promocional de estreia e adquira visibilidade priorizada para fechar mais contratos.</p>
-            <p class="texto-principal">Conectar sua empresa ou contratar prestação de serviço não precisa ser difícil. O BoraFreela aproxima você do mercado com eficiência e sem burocracia.</p>
-            <p class="texto-principal">Chega de perder horas buscando oportunidades. O Borafreela une profissionais autônomos e empresas de forma rápida, trazendo a segurança e o reconhecimento que seu trabalho merece.</p>
-            <p class="texto-principal">Aproveite as condições especiais antes que a condição mude.</p>
+        <section class="hero">
+
+            <div class="hero-conteudo">
+
+                <h1 class="titulo">
+
+                    CONECTANDO
+                    <span class="laranja">TALENTOS</span>
+                    A
+                    <span class="azul">OPORTUNIDADES</span>.
+
+                </h1>
+
+
+                <p class="subtitulo">
+
+                    Encontre profissionais para o seu projeto ou
+                    mostre seu trabalho para empresas que precisam
+                    das suas habilidades.
+
+                </p>
+
+
+                <div class="botoes">
+
+                    <a
+                        href="cadastro.html"
+                        class="botao botao-principal"
+                    >
+                        Quero começar
+                    </a>
+
+                    <a
+                        href="explorar.html"
+                        class="botao botao-sec"
+                    >
+                        Explorar profissionais
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section>
+
+
+        <!-- 
+             INTRODUÇÃO
+         -->
+
+        <section class="intro">
+
+            <div class="intro-caixa">
+
+                <h2>
+                    Um jeito simples de encontrar oportunidades
+                </h2>
+
+                <p>
+                    O BoraFreela conecta profissionais autônomos,
+                    freelancers, empresas e pessoas que precisam
+                    de serviços. A ideia é aproximar quem tem
+                    uma habilidade de quem precisa dela.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 
+             CATEGORIAS
+         -->
+
+        <section class="categorias">
+
+            <div class="cabecalho">
+
+                <div>
+
+                    <h2>
+                        Encontre profissionais
+                    </h2>
+
+                    <p>
+                        Escolha uma categoria e encontre o serviço
+                        que procura.
+                    </p>
+
+                </div>
+
+                <a
+                    href="explorar.html"
+                    class="ver-todas"
+                >
+                    Ver todas →
+                </a>
+
+            </div>
+
+
             <ul class="cards">
-                <li class="desenvolvedor">Desenvolvedor</li>
-                <li class="designer">Desginer</li>
-                <li class="video">Video Maker</li>
+
+                <li class="card dev">
+
+                    <h3>
+                        Desenvolvedor
+                    </h3>
+
+                    <span>
+                        Sites, sistemas e aplicações
+                    </span>
+
+                </li>
+
+
+                <li class="card design">
+
+                    <h3>
+                        Designer
+                    </h3>
+
+                    <span>
+                        Identidade visual e criação
+                    </span>
+
+                </li>
+
+
+                <li class="card video">
+
+                    <h3>
+                        Video Maker
+                    </h3>
+
+                    <span>
+                        Edição e produção de vídeos
+                    </span>
+
+                </li>
+
+
+                <li class="card marketing">
+
+                    <h3>
+                        Marketing
+                    </h3>
+
+                    <span>
+                        Divulgação e redes sociais
+                    </span>
+
+                </li>
+
+
+                <li class="card traducao">
+
+                    <h3>
+                        Tradução
+                    </h3>
+
+                    <span>
+                        Textos e idiomas
+                    </span>
+
+                </li>
+
+
+                <li class="card educacao">
+
+                    <h3>
+                        Educação
+                    </h3>
+
+                    <span>
+                        Aulas e reforço
+                    </span>
+
+                </li>
+
             </ul>
+
         </section>
+
+
+
+        <!-- 
+             COMO FUNCIONA
+         -->
+
+        <section class="como">
+
+            <div class="como-titulo">
+
+                <h2>
+                    Como funciona?
+                </h2>
+
+                <p>
+                    Encontrar ou oferecer um serviço pode ser simples.
+                </p>
+
+            </div>
+
+
+            <div class="passos">
+
+
+                <div class="passo">
+
+                    <div class="numero">
+                        1
+                    </div>
+
+                    <h3>
+                        Crie seu cadastro
+                    </h3>
+
+                    <p>
+                        Monte seu perfil com suas informações,
+                        habilidades e serviços que você oferece.
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <div class="numero">
+                        2
+                    </div>
+
+                    <h3>
+                        Encontre uma oportunidade
+                    </h3>
+
+                    <p>
+                        Explore profissionais, serviços e
+                        oportunidades disponíveis na plataforma.
+                    </p>
+
+                </div>
+
+
+                <div class="passo">
+
+                    <div class="numero">
+                        3
+                    </div>
+
+                    <h3>
+                        Entre em contato
+                    </h3>
+
+                    <p>
+                        Converse com a outra pessoa e combine
+                        os detalhes do serviço.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 
+             CHAMADA PARA CADASTRO
+         -->
+
+        <section class="chamada">
+
+            <div class="chamada-caixa">
+
+                <div class="chamada-texto">
+
+                    <h2>
+                        Pronto para começar?
+                    </h2>
+
+                    <p>
+                        Crie seu cadastro no BoraFreela e comece
+                        a encontrar novas oportunidades ou
+                        profissionais para o seu projeto.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="cadastro.html"
+                    class="botao-cadastro"
+                >
+                    Criar cadastro
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <footer></footer>
+
+
+    <!-- 
+         RODAPÉ
+     -->
+
+    <footer>
+
+        <div class="rodape">
+
+
+            <div class="rodape-logo">
+
+                <h2>
+                    Bora<span>Freela</span>
+                </h2>
+
+                <p>
+                    Conectando talentos a oportunidades
+                    de forma simples e direta.
+                </p>
+
+            </div>
+
+
+            <div class="rodape-links">
+
+                <h3>
+                    BoraFreela
+                </h3>
+
+                <a href="comofunciona.html">
+                    Como funciona
+                </a>
+
+                <a href="explorar.html">
+                    Explorar
+                </a>
+
+                <a href="cadastro.html">
+                    Criar cadastro
+                </a>
+
+            </div>
+
+
+            <div class="rodape-links">
+
+                <h3>
+                    Conta
+                </h3>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+                <a href="profile.html">
+                    Meu perfil
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="direitos">
+
+            © 2026 BoraFreela. Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+
 </body>
+
 </html>
