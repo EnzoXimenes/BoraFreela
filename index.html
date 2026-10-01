@@ -9,6 +9,16 @@
 
     <title>BoraFreela</title>
 
+    <script>
+        (function () {
+            try {
+                var salvo = localStorage.getItem("tema");
+                var escuro = salvo ? salvo === "escuro" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (escuro) document.documentElement.setAttribute("data-tema", "escuro");
+            } catch (e) {}
+        })();
+    </script>
+
     <style>
 
         /* 
@@ -25,6 +35,27 @@
             --texto: #252525;
             --texto-claro: #666666;
             --borda: #dedee7;
+            --fundo: #ffffff;
+            --hover-claro: #f2f0fa;
+            --destaque: #290a80;
+        }
+
+
+        /* MODO ESCURO */
+        :root[data-tema="escuro"] {
+            --fundo: #121218;
+            --cinza: #1b1a26;
+            --cinza-2: #242233;
+            --texto: #ececf1;
+            --texto-claro: #a9a9b8;
+            --borda: #343143;
+            --hover-claro: #26233a;
+            --destaque: #b3a7ff;
+            color-scheme: dark;
+        }
+
+        body {
+            transition: background-color .25s, color .25s;
         }
 
         * {
@@ -39,7 +70,7 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: var(--branco);
+            background-color: var(--fundo);
             color: var(--texto);
         }
 
@@ -215,7 +246,7 @@
         }
 
         .azul {
-            color: var(--azul-claro);
+            color: var(--destaque);
         }
 
         .subtitulo {
@@ -251,13 +282,13 @@
         }
 
         .botao-sec {
-            border: 1px solid var(--azul);
-            color: var(--azul);
-            background-color: var(--branco);
+            border: 1px solid var(--destaque);
+            color: var(--destaque);
+            background-color: var(--fundo);
         }
 
         .botao-sec:hover {
-            background-color: #f2f0fa;
+            background-color: var(--hover-claro);
         }
 
 
@@ -276,7 +307,7 @@
 
         .intro h2 {
             font-size: 30px;
-            color: var(--azul);
+            color: var(--destaque);
             margin-bottom: 15px;
         }
 
@@ -305,7 +336,7 @@
 
         .cabecalho h2 {
             font-size: 30px;
-            color: var(--azul);
+            color: var(--destaque);
             margin-bottom: 5px;
         }
 
@@ -315,16 +346,16 @@
         }
 
         .ver-todas {
-            color: var(--azul);
+            color: var(--destaque);
             font-weight: bold;
             font-size: 14px;
             background-color: transparent;
             padding: 10px;
-            border: 1px solid var(--azul);
+            border: 1px solid var(--destaque);
             border-radius: 8px;
         }
         .ver-todas:hover{
-           background-color: #f2f0fa;
+           background-color: var(--hover-claro);
         }
 
         .cards {
@@ -427,7 +458,7 @@
         }
 
         .como-titulo h2 {
-            color: var(--azul);
+            color: var(--destaque);
             font-size: 30px;
             margin-bottom: 8px;
         }
@@ -445,7 +476,7 @@
         }
 
         .passo {
-            background-color: var(--branco);
+            background-color: var(--fundo);
             border: 1px solid var(--borda);
             border-radius: 12px;
             padding: 25px;
@@ -1326,6 +1357,31 @@
 
     </footer>
 
+
+    <script>
+        (function () {
+            var raiz = document.documentElement;
+            var botao = document.querySelector(".tema");
+            if (!botao) return;
+            var img = botao.querySelector("img");
+            var texto = botao.querySelector("strong");
+
+            function atualizar() {
+                var escuro = raiz.getAttribute("data-tema") === "escuro";
+                texto.textContent = escuro ? "Modo claro" : "Modo escuro";
+                img.alt = escuro ? "Mudar para o modo claro" : "Mudar para o modo escuro";
+            }
+
+            botao.addEventListener("click", function () {
+                var escuro = raiz.getAttribute("data-tema") === "escuro";
+                if (escuro) raiz.removeAttribute("data-tema"); else raiz.setAttribute("data-tema", "escuro");
+                try { localStorage.setItem("tema", escuro ? "claro" : "escuro"); } catch (e) {}
+                atualizar();
+            });
+
+            atualizar();
+        })();
+    </script>
 
 </body>
 
